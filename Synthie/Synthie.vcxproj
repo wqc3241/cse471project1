@@ -126,6 +126,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdditiveInstrument.cpp" />
+    <ClCompile Include="AdditiveSines.cpp" />
     <ClCompile Include="AR.cpp" />
     <ClCompile Include="AudioNode.cpp" />
     <ClCompile Include="audio\DirSound.cpp" />
@@ -151,6 +153,8 @@
     <ClCompile Include="ToneInstrument.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdditiveInstrument.h" />
+    <ClInclude Include="AdditiveSines.h" />
     <ClInclude Include="AR.h" />
     <ClInclude Include="AudioNode.h" />
     <ClInclude Include="audio\DirSound.h" />
@@ -180,6 +184,7 @@
     <None Include="res\Synthie.rc2" />
     <None Include="res\Toolbar.bmp" />
     <None Include="res\Toolbar256.bmp" />
+    <None Include="scores\qichaowang.score" />
     <None Include="UserImages.bmp" />
   </ItemGroup>
   <ItemGroup>

@@ -75,6 +75,12 @@
     <ClCompile Include="AR.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AdditiveInstrument.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AdditiveSines.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio\DirSound.h">
@@ -146,6 +152,12 @@
     <ClInclude Include="AR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AdditiveInstrument.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AdditiveSines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Synthie.ico">
@@ -162,6 +174,9 @@
     </None>
     <None Include="UserImages.bmp">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="scores\qichaowang.score">
+      <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

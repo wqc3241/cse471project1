@@ -19,7 +19,6 @@ CAudioNode::CAudioNode(double bpm)
 	m_sampleRate = 44100;
 	m_samplePeriod = 1.0 / 44100.0;
 	m_bpm = bpm;
-
 }
 
 CAudioNode::~CAudioNode()

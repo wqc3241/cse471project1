@@ -2,6 +2,7 @@
 #include "Synthesizer.h"
 #include "Instrument.h"
 #include "ToneInstrument.h"
+#include "AdditiveInstrument.h"
 #include "xmlhelp.h"
 #include <vector>
 #include <algorithm>
@@ -15,7 +16,7 @@ CSynthesizer::CSynthesizer()
 	m_samplePeriod = 1 / m_sampleRate;
 	m_bpm = 120;            
 	m_beatspermeasure = 4;
-	m_secperbeat = 0.5;     
+	m_secperbeat = 1 / (m_bpm / 60);
 }
 
 
@@ -83,11 +84,16 @@ bool CSynthesizer::Generate(double * frame)
 		{
 			instrument = new CToneInstrument(GetBeatsPerMinute());
 		}
+		else if (note->Instrument() == L"AdditiveInstrument")
+		{
+			instrument = new CAdditiveInstrument();
+		}
 
 		// Configure the instrument object
 		if (instrument != NULL)
 		{
 			instrument->SetSampleRate(GetSampleRate());
+			instrument->SetSecondsPerBeat(m_secperbeat);
 			instrument->SetNote(note);
 			instrument->Start();
 
