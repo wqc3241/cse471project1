@@ -23,6 +23,7 @@ void CAdditiveInstrument::Start()
 {
 	m_sinewave.SetSampleRate(GetSampleRate());
 	m_sinewave.SetDuration(m_duration);
+	m_sinewave.SetVibratoRate(0.0);
 	m_sinewave.Start();
 	m_time = 0;
 }

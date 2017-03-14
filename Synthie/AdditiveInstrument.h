@@ -1,6 +1,7 @@
 #pragma once
 #include "Instrument.h"
 #include "AdditiveSines.h"
+#include "AR.h"
 
 class CAdditiveInstrument :
 	public CInstrument

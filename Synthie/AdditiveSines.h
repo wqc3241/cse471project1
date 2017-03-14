@@ -13,14 +13,14 @@ public:
 	//! Generate one frame of audio
 	virtual bool Generate();
 
+	void GenerateWaveTable();
+
 	void SetFreq(double f) { m_freq = f; }
 
 	void SetAmplitude(double &a) { memcpy(&m_amp, &a, sizeof(double) * 8); }
 	void SetDuration(double d) { m_duration = d; }
-	void SetVibratoRate(double d) { m_vRate = d; }
-	void SetVibratoFreq(double d) { m_vFreq = d; }
-
-	void GenerateWaveTable();
+	void SetVibratoRate(double r) { m_vRate = r; }
+	void SetVibratoFreq(double f) { m_vFreq = f; }
 
 private:
 	double m_duration;
