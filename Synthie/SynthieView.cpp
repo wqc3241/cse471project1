@@ -234,8 +234,8 @@ void CSynthieView::OnGenerateSynthesizer()
 
 	while (m_synthesizer.Generate(frame))
 	{
-		audio[0] = RangeBound(frame[0]);
-		audio[1] = RangeBound(frame[1]);
+		audio[0] = RangeBound(frame[0] * 32767);
+		audio[1] = RangeBound(frame[1] * 32767);
 
 		GenerateWriteFrame(audio);
 

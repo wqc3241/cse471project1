@@ -1,77 +1,98 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "AdditiveInstrument.h"
+#include "Note.h"
 #include "Notes.h"
-#include <string>
+#include "ADSR.h"
 #include <sstream>
-#include <vector>
 
-CAdditiveInstrument::CAdditiveInstrument(void)
+
+CAdditiveInstrument::CAdditiveInstrument()
 {
-	m_crossFadeIn = 0.0;
-	m_crossFadeOut = 0.0;
-	m_attack = 0;
-	m_release = 0;
-	m_decay = 0;
-	m_sustain = 1.0;
+	m_duration = 0.1;
 }
 
-CAdditiveInstrument::~CAdditiveInstrument(void)
+
+CAdditiveInstrument::CAdditiveInstrument(double bpm)
+{
+	m_duration = 0.1;
+	m_bpm = bpm;
+}
+
+
+CAdditiveInstrument::~CAdditiveInstrument()
 {
 }
+
 
 void CAdditiveInstrument::Start()
 {
+	// set the sample rate of the wave
 	m_sinewave.SetSampleRate(GetSampleRate());
-	m_sinewave.SetDuration(m_duration);
-	m_sinewave.SetVibratoRate(0.0);
 	m_sinewave.Start();
 	m_time = 0;
+
+	// create a new envelope object
+	m_envelope = new CADSR();
+	// set the attack and release of the ADSR envelope
+	static_cast<CADSR*>(m_envelope)->SetAttack(.05);
+	static_cast<CADSR*>(m_envelope)->SetRelease(.05);
+
+	// set the envelope of the filter
+	m_amp_filter.SetEnvelope(m_envelope);
+	// set the source to be the additive wave object
+	m_amp_filter.SetSource(&m_sinewave);
+	// set the sample rate
+	m_amp_filter.SetSampleRate(GetSampleRate());
+	// set the duration
+	m_amp_filter.SetDuration(m_duration);
+	m_amp_filter.Start();
 }
 
 
 bool CAdditiveInstrument::Generate()
 {
-	// Tell the component to generate an audio sample
-	m_sinewave.Generate();
+	// begin envelope generation
+	m_envelope->Generate();
 
-	// Read the component's sample and make it our resulting frame.
+	// if cross fade flag is true, implement cross fading
+	if (m_sinewave.GetCrossfadeFlag())
+	{
+		// know when to end the cross fade effect
+		auto crossfade_end_time = m_sinewave.GetCrossfadeStartTime() + m_crossfade_duration;
 
+		if (m_time < m_sinewave.GetCrossfadeStartTime())
+		{
+			// generate wave by adding together several sinusoids (additive wave)
+			m_sinewave.Generate();
+		}
 
-	m_frame[0] = m_sinewave.Frame(0);
-	m_frame[1] = m_sinewave.Frame(1);
-
-	//Attack and release
-	double ratio = 1.0;
-	double norp = -1.0;
-	if (m_sustain > 1.0) {
-		norp = 1.0;
-	}
-	else{
-		norp = -1.0;
-	}
-
-	if (m_time < m_attack) {
-		ratio = m_time*1. / m_attack;
-	}
-	else if (m_time < m_decay) {
-		ratio = norp*((1.0 - m_sustain) / (m_decay - m_attack))*(m_time)+(1.0 - norp*((1.0 - m_sustain) / (m_decay - m_attack))*(m_attack));
-	}
-	else if (m_time >(m_duration - m_release) && m_release != 0) {
-		if (m_sustain <= 0) m_sustain = 1.0;
-		ratio = m_time*-m_sustain / m_release + (m_sustain / m_release)*(m_duration);
-	}
-	else {
-		ratio = m_sustain;
+		else if (m_time > m_sinewave.GetCrossfadeStartTime() && m_time < crossfade_end_time)
+		{
+			// generate the cross fade wave
+			m_sinewave.GenerateCrossfade(m_time, m_crossfade_duration);
+		}
 	}
 
-	m_frame[0] = m_frame[1] *= ratio;
+	else
+	{
+		// generate wave by adding together several sinusoids (additive wave)
+		m_sinewave.Generate();
+	}
 
-	// Update time
+	// generate audio sample
+	auto okay = m_amp_filter.Generate();
+
+	// read the sample, make it the result frame
+	m_frame[0] = m_amp_filter.Frame(0);
+	m_frame[1] = m_amp_filter.Frame(1);
+
+	// update the time
 	m_time += GetSamplePeriod();
 
-	// We return true until the time reaches the duration.
-	return m_time < m_duration;
+	// returns true until the time equals the duration
+	return okay;
 }
+
 
 void CAdditiveInstrument::SetNote(CNote *note)
 {
@@ -83,7 +104,7 @@ void CAdditiveInstrument::SetNote(CNote *note)
 	attributes->get_length(&len);
 
 	// Loop over the list of attributes
-	for (int i = 0; i<len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		// Get attribute i
 		CComPtr<IXMLDOMNode> attrib;
@@ -104,72 +125,92 @@ void CAdditiveInstrument::SetNote(CNote *note)
 		if (name == "duration")
 		{
 			value.ChangeType(VT_R8);
-			SetDuration(value.dblVal);
+			// 1 / (m_bpm / 60) - seconds per beat
+			// this prevents unwanted overlap and correct duration of each note
+			SetDuration(value.dblVal * (1 / (m_bpm / 60)));
 		}
+
 		else if (name == "note")
 		{
 			SetFreq(NoteToFrequency(value.bstrVal));
 		}
-		else if (name == "amplitudes")
+
+		else if (name == "harmonics")
 		{
-			std::wstring data(value.bstrVal);
-			std::string str(data.begin(), data.end());
-
-			std::stringstream datainput(str);
-			std::string multi;
-
-			double harmonics[8] = { 0 };
-
-			int i = 0;
-			while (std::getline(datainput, multi, char(32))) {
-				harmonics[i++] = atof(multi.c_str());
-			}
-
-			SetAmplitude(harmonics[0]);
+			AddHarmonics(value.bstrVal);
 		}
-		else if (name == "crossFadeIn")
+
+		else if (name == "vibrato")
 		{
 			value.ChangeType(VT_R8);
-			SetCrossFadeIn(value.dblVal * m_duration);
+			m_sinewave.SetVibratoFlag(true);
+			m_sinewave.SetVibrato(value.dblVal);
 		}
-		else if (name == "crossFadeOut")
+
+		else if (name == "vibratoRate")
 		{
 			value.ChangeType(VT_R8);
-			SetCrossFadeOut(value.dblVal * m_duration);
-		}
-		else if (name == "ADSR") {
-			std::wstring data(value.bstrVal);
-			std::string str(data.begin(), data.end());
-
-			std::stringstream datainput(str);
-			std::string multi;
-
-			std::getline(datainput, multi, char(32));
-			m_attack = atof(multi.c_str()) * m_duration;
-
-			std::getline(datainput, multi, char(32));
-			m_decay = m_attack + atof(multi.c_str()) * m_duration;
-
-			std::getline(datainput, multi, char(32));
-			m_sustain = atof(multi.c_str());
-
-			std::getline(datainput, multi, char(32));
-			m_release = atof(multi.c_str()) * m_duration;
-		}
-		else if (name == "vibrato") {
-			std::wstring data(value.bstrVal);
-			std::string str(data.begin(), data.end());
-
-			std::stringstream datainput(str);
-			std::string multi;
-
-			std::getline(datainput, multi, char(32));
-			m_sinewave.SetVibratoRate(atof(multi.c_str()));
-
-			std::getline(datainput, multi, char(32));
-			m_sinewave.SetVibratoFreq(atof(multi.c_str()));
+			m_sinewave.SetVibratoRate(value.dblVal);
 		}
 
+		else if (name == "crossfade")
+		{
+			value.ChangeType(VT_R8);
+
+			m_crossfade_duration = value.dblVal;
+			m_sinewave.SetCrossfadeFlag(true);
+			auto start_time = m_duration - m_crossfade_duration;
+
+			// set the time to start the cross fade
+			m_sinewave.SetCrossfadeStartTime(start_time);
+		}
+
+		else if (name == "crossfadeOverlap")
+		{
+			// overlap in beats
+			value.ChangeType(VT_R8);
+
+			// 1 / (m_bpm / 60) - seconds per beat
+			auto overlap_time = (1 / (m_bpm / 60)) * value.dblVal;
+			auto crossfade_time = m_sinewave.GetCrossfadeStartTime();
+
+			// set the time to start the cross fade, taking into account the overlap time
+			m_sinewave.SetCrossfadeStartTime(crossfade_time - overlap_time);
+		}
 	}
+}
 
+
+void CAdditiveInstrument::SetNextNote(CNote* next_note)
+{
+	// used for cross fade
+	m_next = new CAdditiveInstrument();
+
+	// set the sample rate
+	m_next->SetSampleRate(GetSampleRate());
+	// move to the next note
+	m_next->SetNote(next_note);
+	m_next->Start();
+
+	// used for interpolation between sound A and B
+	m_sinewave.SetNextWave(&m_next->m_sinewave);
+}
+
+
+void CAdditiveInstrument::AddHarmonics(wstring harmonics)
+{
+	// get the string stream of harmonics in the XML file
+	// harmonics = 1 .5 .7
+	wstringstream sstream(harmonics);
+	// individual amplitude in list (like 1, .5, or .7)
+	wstring harmonic_amp;
+
+	// read into the wave
+	while (sstream >> harmonic_amp)
+	{
+		// index - harmonic
+		// value - amplitude
+		// convert amplitude from string to double
+		m_sinewave.AddHarmonic(stod(harmonic_amp));
+	}
 }
