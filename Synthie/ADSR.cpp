@@ -26,27 +26,25 @@ void CADSR::Start()
 
 bool CADSR::Generate()
 {
-	// ADSR
-
-	// A - Attack
+	// Attack
 	if (m_time <= m_attack)
 	{
 		m_level = m_time / m_attack * m_sustain;
 	}
 
-	// R - Release
+	// Release
 	else if ((m_duration - m_release) < m_time)
 	{
 		m_level = (1 - (m_time - (m_duration - m_release)) / m_release) * m_sustain;
 	}
 
-	// D - Decay
+	// Decay
 	else if (m_time > m_attack && m_time <= m_attack + m_decay)
 	{
 		m_level = (m_level - 1) * ((m_time - (m_duration - m_decay)) / m_decay) + 1;
 	}
 
-	// S - Sustain
+	// Sustain
 	else
 	{
 		m_level = m_sustain;
@@ -55,5 +53,5 @@ bool CADSR::Generate()
 	// update the time
 	m_time += GetSamplePeriod();
 
-	return m_duration > m_time;
+	return m_time < m_duration;
 }

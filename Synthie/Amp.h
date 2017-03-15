@@ -15,18 +15,14 @@ public:
 	virtual bool Generate();
 
 	// SETTERS
-	void SetEnvelope(CADSR* envelope) { m_envelope = envelope; }
+	void SetEnvelope(CADSR* envelope) { m_ADSR = envelope; }
 	void SetSource(CAudioNode* source) { m_source = source; }
 	void SetDuration(double duration) { m_duration = duration; }
 
 protected:
-	// source of the audio node
 	CAudioNode* m_source;
-	// envelope object
-	CADSR* m_envelope;
-	// audio duration
+	CADSR* m_ADSR;
 	double m_duration;
-	// keep track of time
 	double m_time;
 };
 

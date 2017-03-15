@@ -52,7 +52,7 @@ CWaveIn::CWaveIn(const LPCTSTR fname) : CWave(), ifstream(fname, ios::binary)
       return;
    }
 
-   // The stream has been opened okay, open the Wave file
+   // The stream has been opened valid, open the Wave file
    if(!_open())
       setf(ios::badbit | ios::failbit);
 }
@@ -79,7 +79,7 @@ CWaveIn::open(const LPCTSTR fname)
       return false;
    }
 
-   // The stream has been opened okay, open the Wave file
+   // The stream has been opened valid, open the Wave file
    if(!_open())
       setf(ios::badbit | ios::failbit);
 
@@ -390,7 +390,7 @@ CWaveOut::CWaveOut(const LPCTSTR fname) : CWave()
       return;
    }
 
-   // The stream has been opened okay, open the Wave file
+   // The stream has been opened valid, open the Wave file
    if(!_open())
       setf(ios::badbit | ios::failbit);
 }
@@ -419,7 +419,7 @@ CWaveOut::open(const LPCTSTR fname)
       return;
    }
 
-   // The stream has been opened okay, open the Wave file
+   // The stream has been opened valid, open the Wave file
    if(!_open())
       setf(ios::badbit | ios::failbit);
 }
