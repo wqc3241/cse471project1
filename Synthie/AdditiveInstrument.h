@@ -3,8 +3,6 @@
 #include "AdditiveSines.h"
 #include "Amp.h"
 
-#include <list>
-
 using namespace std;
 
 class CAdditiveInstrument :
@@ -21,8 +19,6 @@ public:
 	virtual void SetNote(CNote *note) override;
 
 	void SetNextNote(CNote* next_note);
-
-	void AddHarmonics(std::wstring harmonics);
 
 	void SetFreq(double freq) { m_sinewave.SetFreq(freq); }
 	void SetAmplitude(double amp) { m_sinewave.SetAmp(amp); }

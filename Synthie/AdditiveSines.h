@@ -16,42 +16,28 @@ public:
 	// set the wave tables for harmonics and vibrato 
 	void SetWavetables();
 
-	// add a harmonic to the vector of harmonics
-	void AddHarmonic(double harmonic) { m_harmonics.push_back(harmonic); }
+	void SetHarmonics(int harmonic) { m_harmonics=harmonic; }
 
-	void GenerateCrossfade(double time, double crossfade_dur);
+	void GenerateCrossfade(double time, double crossFadeDuration);
 
-	// GETTERS
-	vector<double> GetHarmonics() { return m_harmonics; }
+	int GetHarmonics() { return m_harmonics; }
 	bool GetVibratoFlag() { return m_implement_vibrato; }
 	bool GetCrossfadeFlag() { return m_implement_crossfade; }
-	double GetCrossfadeStartTime() { return m_crossfade_start_time; }
+	double GetCrossfadeStartTime() { return m_crossFadeStart; }
 
-	// SETTERS
-
-	// cross fade stuff
 	void SetCrossfadeFlag(bool flag) { m_implement_crossfade = flag; }
-	void SetCrossfadeStartTime(double time) { m_crossfade_start_time = time; }
-	// vibrato stuff
+	void SetCrossfadeStartTime(double time) { m_crossFadeStart = time; }
+
 	void SetVibratoFlag(bool flag) { m_implement_vibrato = flag; }
 	void SetVibrato(double vibrato) { m_vibrato = vibrato; }
 	void SetVibratoRate(double vibrato_rate) { m_vibratoRate = vibrato_rate; }
-	// wave stuff
-	void SetNextWave(CAdditiveSines* next) { m_next_wave = next; }
-	// GETTERS
 
-	// get the size of the wave table
+	void SetNextWave(CAdditiveSines* next) { m_nextWave = next; }
+
 	double GetWavetableSize() { return m_wavetable.size(); }
-	// get the frequency
 	double GetFreq() { return m_freq; }
-	// get the amplitude
 	double GetAmp() { return m_amp; }
-	// get the phase
 	double GetPhase() { return m_phase; }
-	// get the filter (flag)
-	bool GetFilter() { return m_filter; }
-
-	// SETTERS
 
 	// sets the frequency
 	void SetFreq(double f) { m_freq = f; }
@@ -59,23 +45,22 @@ public:
 	void SetAmp(double a) { m_amp = a; }
 
 protected:
-	std::vector<double> m_wavetable;  // wave table
-	double m_freq; // frequency
-	double m_amp;  // amplitude
-	int m_phase;  // phase
-	bool m_filter;  // filter?
+	std::vector<double> m_wavetable;  
+	double m_freq; 
+	double m_amp;  
+	int m_phase; 
 
 private:
 
-	vector<double> m_harmonics;
+	int m_harmonics;
 	double m_time;
 	bool m_implement_vibrato = false;
 	bool m_implement_crossfade = false;
 
-	double m_crossfade_start_time;
+	double m_crossFadeStart;
 
 	double m_vibrato;
 	double m_vibratoRate;
-	CAdditiveSines* m_next_wave = nullptr;
+	CAdditiveSines* m_nextWave = nullptr;
 };
 

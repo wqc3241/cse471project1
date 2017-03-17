@@ -129,20 +129,26 @@ void CAdditiveInstrument::SetNote(CNote *note)
 
 		else if (name == "harmonics")
 		{
-			AddHarmonics(value.bstrVal);
+			value.ChangeType(VT_I2);
+			m_sinewave.SetHarmonics(value.lVal);
 		}
 
 		else if (name == "vibrato")
 		{
-			value.ChangeType(VT_R8);
-			m_sinewave.SetVibratoFlag(true);
-			m_sinewave.SetVibrato(value.dblVal);
-		}
 
-		else if (name == "vibratoRate")
-		{
-			value.ChangeType(VT_R8);
-			m_sinewave.SetVibratoRate(value.dblVal);
+			std::wstring vibrato(value.bstrVal);
+			std::string data(vibrato.begin(), vibrato.end());
+
+			std::stringstream ss(data);
+			std::string item;
+
+			m_sinewave.SetVibratoFlag(true);
+
+			std::getline(ss, item, char(32));
+			m_sinewave.SetVibrato(atof(item.c_str()));
+
+			std::getline(ss, item, char(32));
+			m_sinewave.SetVibratoRate(atof(item.c_str()));
 		}
 
 		else if (name == "crossfade")
@@ -186,20 +192,4 @@ void CAdditiveInstrument::SetNextNote(CNote* next_note)
 
 	// used for interpolation between sound A and B
 	m_sinewave.SetNextWave(&m_next->m_sinewave);
-}
-
-
-void CAdditiveInstrument::AddHarmonics(wstring harmonics)
-{
-	// harmonics = 1 .5 .7
-	wstringstream sstream(harmonics);
-
-	// individual amplitude in list (like 1, .5, or .7)
-	wstring harmonic_amp;
-
-	// read into the wave
-	while (sstream >> harmonic_amp)
-	{
-		m_sinewave.AddHarmonic(stod(harmonic_amp));
-	}
 }

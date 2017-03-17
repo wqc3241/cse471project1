@@ -49,18 +49,13 @@ void CAdditiveSines::SetWavetables()
 		// set the sample
 		auto sample = sin(sine_rads) * m_amp;
 
-		if (m_harmonics.size() > 0)
+		// how many harmonics want
+		if (m_harmonics && m_harmonics > 0)
 		{
 			auto nyquist_freq = GetSampleRate() / 2;
 
-			// loop to the end of the harmonic
-			for (auto n = 0; n < m_harmonics.size() && (m_freq * (n + 1)) < nyquist_freq; n++)
-			{
-				// adjust harmonic number
-				auto harmonic = n + 1;
-
-				// save value of sample in memory to be used at end of SetWavetables()
-				sample += m_harmonics[n] * (m_amp / harmonic) * (sin(m_time * 2 * PI * harmonic * m_freq));
+			for (int h = 1; (m_freq * h) < (nyquist_freq); h++) {
+				sample += (m_amp / m_harmonics) * (sin(m_time * 2 * PI * m_freq * m_harmonics));
 			}
 		}
 
@@ -71,7 +66,6 @@ void CAdditiveSines::SetWavetables()
 			double diff = sin(vibrato_rads) * m_vibrato;
 
 			// increment phases
-			// save the sine radians and vibrato radians
 			sine_rads += (2 * PI * (m_freq + diff)) / m_sampleRate;
 			vibrato_rads += (2 * PI * m_vibratoRate) / m_sampleRate;
 		}
@@ -81,20 +75,20 @@ void CAdditiveSines::SetWavetables()
 	}
 }
 
-void CAdditiveSines::GenerateCrossfade(double time, double crossfade_dur)
+void CAdditiveSines::GenerateCrossfade(double time, double crossFadeDuration)
 {
 	// time of the cross fade elapsed
-	auto elapsed_time = time - m_crossfade_start_time;
+	auto medianTime = time - m_crossFadeStart;
 	double next_sample[2];
 	double current_sample[2];
 	double interpolated_sample;
 
-	if (m_next_wave != nullptr && m_phase < m_next_wave->GetWavetableSize() && m_phase < GetWavetableSize())
+	if (m_nextWave != nullptr && m_phase < m_nextWave->GetWavetableSize() && m_phase < GetWavetableSize())
 	{
-		next_sample[0] = next_sample[1] = m_next_wave->m_wavetable[m_phase];
+		next_sample[0] = next_sample[1] = m_nextWave->m_wavetable[m_phase];
 		current_sample[0] = current_sample[1] = m_wavetable[m_phase];
-		interpolated_sample = current_sample[0] * ((crossfade_dur - elapsed_time) / crossfade_dur) +
-			next_sample[0] * (elapsed_time / crossfade_dur);
+		interpolated_sample = current_sample[0] * ((crossFadeDuration - medianTime) / crossFadeDuration) +
+			next_sample[0] * (medianTime / crossFadeDuration);
 
 		// update frame
 		m_frame[0] = m_frame[1] = interpolated_sample;
