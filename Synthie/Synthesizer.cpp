@@ -3,6 +3,7 @@
 #include "Instrument.h"
 #include "ToneInstrument.h"
 #include "AdditiveInstrument.h"
+#include "PianoInstrument.h"
 #include "xmlhelp.h"
 #include <vector>
 #include <algorithm>
@@ -91,6 +92,10 @@ bool CSynthesizer::Generate(double * frame)
 			{
 				static_cast<CAdditiveInstrument*>(instrument)->SetNextNote(&m_notes[m_currentNote + 1]);
 			}
+		}
+		else if (note->Instrument() == L"PianoInstrument")
+		{
+			instrument = new CPianoInstrument();
 		}
 
 		// Configure the instrument object
