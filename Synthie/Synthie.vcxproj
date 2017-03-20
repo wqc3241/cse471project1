@@ -215,6 +215,7 @@
     <None Include="scores\qichaowang.score">
       <SubType>Designer</SubType>
     </None>
+    <None Include="scores\xingchenxiao.score" />
     <None Include="UserImages.bmp" />
   </ItemGroup>
   <ItemGroup>

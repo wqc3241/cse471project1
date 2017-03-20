@@ -262,6 +262,9 @@
     <None Include="scores\qichaowang.score">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="scores\xingchenxiao.score">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Synthie.rc">
