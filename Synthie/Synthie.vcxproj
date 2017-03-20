@@ -212,10 +212,13 @@
     <None Include="res\Synthie.rc2" />
     <None Include="res\Toolbar.bmp" />
     <None Include="res\Toolbar256.bmp" />
+    <None Include="scores\all.score" />
+    <None Include="scores\fight2.score" />
     <None Include="scores\qichaowang.score">
       <SubType>Designer</SubType>
     </None>
     <None Include="scores\xingchenxiao.score" />
+    <None Include="scores\yishi.score" />
     <None Include="UserImages.bmp" />
   </ItemGroup>
   <ItemGroup>

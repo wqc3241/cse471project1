@@ -5,6 +5,10 @@ using namespace std;
 #include "msxml2.h"
 #include "Instrument.h"
 #include "Note.h"
+#include "WaveInstrumentFactory.h"
+#include "PianoInstrument.h"
+#include "PianoInstrumentFactory.h"
+
 class CSynthesizer
 {
 public:
@@ -34,6 +38,9 @@ public:
 	void XmlLoadScore(IXMLDOMNode * xml);
 	void XmlLoadInstrument(IXMLDOMNode * xml);
 	void XmlLoadNote(IXMLDOMNode * xml, std::wstring & instrument);
+	CWaveInstrumentFactory m_waveinstfactory;
+	CPianoInstrumentFactory m_pianoInstrumentFactory;
+
 private:
 	int		m_channels;
 	double	m_sampleRate;

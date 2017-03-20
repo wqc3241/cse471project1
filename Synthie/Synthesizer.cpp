@@ -94,13 +94,15 @@ bool CSynthesizer::Generate(double * frame)
 				static_cast<CAdditiveInstrument*>(instrument)->SetNextNote(&m_notes[m_currentNote + 1]);
 			}
 		}
-		else if (note->Instrument() == L"PianoInstrument")
-		{
-			instrument = new CPianoInstrument();
-		}
 		else if (note->Instrument() == L"WaveInstrument")
 		{
-			instrument = new CWaveInstrument();
+			m_waveinstfactory.SetNote(note);
+			instrument = m_waveinstfactory.CreateInstrument();
+		}
+		else if (note->Instrument() == L"PianoInstrument")
+		{
+			m_pianoInstrumentFactory.SetNote(note);
+			instrument = m_pianoInstrumentFactory.CreateInstrument();
 		}
 
 		// Configure the instrument object

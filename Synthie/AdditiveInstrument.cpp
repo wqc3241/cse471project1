@@ -72,7 +72,7 @@ bool CAdditiveInstrument::Generate()
 	}
 
 	// generate sample
-	auto valid = m_amp.Generate();
+	bool valid = m_amp.Generate();
 
 	// read sample, make it the result frame
 	m_frame[0] = m_amp.Frame(0);
@@ -117,9 +117,7 @@ void CAdditiveInstrument::SetNote(CNote *note)
 		if (name == "duration")
 		{
 			value.ChangeType(VT_R8);
-			// 1 / (m_bpm / 60) - seconds per beat
-			// this prevents unwanted overlap and correct duration of each note
-			SetDuration(value.dblVal * (1 / (m_bpm / 60)));
+			SetDuration(value.dblVal * (60 / m_bpm));
 		}
 
 		else if (name == "note")
