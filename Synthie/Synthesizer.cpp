@@ -4,6 +4,7 @@
 #include "ToneInstrument.h"
 #include "AdditiveInstrument.h"
 #include "PianoInstrument.h"
+#include "WaveInstrument.h"
 #include "xmlhelp.h"
 #include <vector>
 #include <algorithm>
@@ -96,6 +97,10 @@ bool CSynthesizer::Generate(double * frame)
 		else if (note->Instrument() == L"PianoInstrument")
 		{
 			instrument = new CPianoInstrument();
+		}
+		else if (note->Instrument() == L"WaveInstrument")
+		{
+			instrument = new CWaveInstrument();
 		}
 
 		// Configure the instrument object
