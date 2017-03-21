@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<score bpm="120" beatspermeasure="4">
-  <instrument instrument="Piano">
-    <note beat="1.0" duration="2.0" note="E4" dynamics="0.8"/>
-    <note beat="1.0" duration="2.0" note="A4"/>
-    <note beat="1.0" duration="2.0" note="B#4"/>
-    <note beat="3.0" duration="2.0" note="E4"/>
-    <note beat="3.0" duration="2.0" note="A4" dynamics="0.75"/>
-    <note beat="3.0" duration="2.0" note="B#4"/>
-    <note beat="1.0" duration="1.0" note="G2"/>
-    <note beat="2.0" duration="1.0" note="E#1"/>
-    <note beat="3.5" duration="0.5" note="Fb1"/>
-
-  </instrument>
+<score bpm="60" beatspermeasure="4">
+	<instrument instrument="PianoInstrument">
+		<note measure="1" beat="1" duration="1" keydynamic="1" note="waves/piano/E6s.wav"/>
+		<note measure="1" beat="2" note="waves/piano/D6s.wav"/>
+		<note measure="1" beat="3" pedal="pressed" note="waves/piano/C6s.wav"/>
+		<note measure="1" beat="4" note="waves/piano/D6s.wav"/>
+		<note measure="2" beat="1" pedal="released" note="waves/piano/E6s.wav"/>
+		<note measure="2" beat="2" note="waves/piano/E6s.wav" advkeydynamic="waves/piano/E6l.wav"/>
+		<note measure="2" beat="3" note="waves/piano/E6s.wav" advkeydynamic="waves/piano/E6l.wav"/>
+		<note measure="2" beat="4" keydynamic="3" note="waves/piano/A2s.wav"/>
+		<note measure="3" beat="1" keydynamic="2" note="waves/piano/A2s.wav"/>
+		<note measure="3" beat="2" keydynamic="1" note="waves/piano/A2s.wav"/>
+		<note measure="3" beat="3" keydynamic=".5" note="waves/piano/A2s.wav"/>
+	</instrument>
 </score>

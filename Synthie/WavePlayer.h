@@ -1,12 +1,10 @@
 #pragma once
 #include "AudioNode.h"
-
-class CWavePlayer :
-	public CAudioNode
+class CWavePlayer : public CAudioNode
 {
 public:
-	CWavePlayer();
-	~CWavePlayer();
+	CWavePlayer(void);
+	~CWavePlayer(void);
 
 public:
 	virtual void Start();

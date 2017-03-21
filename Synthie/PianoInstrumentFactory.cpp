@@ -1,129 +1,49 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "PianoInstrumentFactory.h"
-#include "audio/DirSoundSource.h"
 
-CPianoInstrumentFactory::CPianoInstrumentFactory(void)
+using namespace std;
+
+CPianoInstrumentFactory::CPianoInstrumentFactory()
 {
-	m_sustain = false;   //Initally pedal is set to not pressed
-	m_dynamics = 0.34;   //Default value for piano dynamics
+	m_duration = 1.0;
+	m_volume = 1.0;
+	m_pedal = false;
+	m_playPedalDown = false;
+	m_playPedalUp = false;
+	m_advancedDynamic = false;
 }
 
-CPianoInstrumentFactory::~CPianoInstrumentFactory(void)
+
+CPianoInstrumentFactory::~CPianoInstrumentFactory()
 {
 }
 
+/* Create the actual piano instrument and send the persistent values to it */
 CPianoInstrument *CPianoInstrumentFactory::CreateInstrument()
 {
-	m_instrument = new CPianoInstrument();
-	m_instrument->GetPlayer()->SetSamples(&m_wave, (int)m_wave.size());
-	m_instrument->Sustain(m_sustain);
+	CPianoInstrument *instrument = new CPianoInstrument();
 
-	return m_instrument;
+	instrument->SetDuration(m_duration);
+	instrument->SetPedal(m_pedal);
+	instrument->SetVolume(m_volume);
+
+	if (m_playPedalDown) {
+		instrument->PlayPedalDown();
+		m_playPedalDown = false;
+	}
+	if (m_playPedalUp) {
+		instrument->PlayPedalUp();
+		m_playPedalUp = false;
+	}
+	//if (m_advancedDynamic){
+	//	instrument->SetAdvDynamic(m_loudFileName, m_advancedDynamic);
+	//	m_advancedDynamic = false;
+	//}
+
+	return instrument;
 }
 
-bool CPianoInstrumentFactory::LoadPianoSampleFile(const char *filename)
-{
-	m_wave_piano.clear();
-
-	CDirSoundSource m_file;
-	if (!m_file.Open(filename))
-	{
-		CString msg = L"Unable to open audio file: ";
-		msg += filename;
-		AfxMessageBox(msg);
-		return false;
-	}
-
-	for (int i = 0; i<m_file.NumSampleFrames(); i++)
-	{
-		short frame[2];
-		m_file.ReadFrame(frame);
-		m_wave_piano.push_back(frame[0]);
-	}
-
-	m_file.Close();
-	return true;
-}
-bool CPianoInstrumentFactory::LoadForteSampleFile(const char *filename)
-{
-	m_wave_forte.clear();
-
-	CDirSoundSource m_file;
-	if (!m_file.Open(filename))
-	{
-		CString msg = L"Unable to open audio file: ";
-		msg += filename;
-		AfxMessageBox(msg);
-		return false;
-	}
-
-	for (int i = 0; i<m_file.NumSampleFrames(); i++)
-	{
-		short frame[2];
-		m_file.ReadFrame(frame);
-		m_wave_forte.push_back(frame[0]);
-	}
-
-	m_file.Close();
-	return true;
-}
-bool CPianoInstrumentFactory::LoadPedalPressed(const char *filename)
-{
-	m_pedalPress.clear();
-
-	CDirSoundSource m_file;
-	if (!m_file.Open(filename))
-	{
-		CString msg = L"Unable to open audio file: ";
-		msg += filename;
-		AfxMessageBox(msg);
-		return false;
-	}
-
-	for (int i = 0; i<m_file.NumSampleFrames(); i++)
-	{
-		short frame[2];
-		m_file.ReadFrame(frame);
-		m_pedalPress.push_back(frame[0] / 6);
-	}
-
-	m_file.Close();
-	return true;
-}
-bool CPianoInstrumentFactory::LoadPedalReleased(const char *filename)
-{
-	m_pedalRelease.clear();
-
-	CDirSoundSource m_file;
-	if (!m_file.Open(filename))
-	{
-		CString msg = L"Unable to open audio file: ";
-		msg += filename;
-		AfxMessageBox(msg);
-		return false;
-	}
-
-	for (int i = 0; i<m_file.NumSampleFrames(); i++)
-	{
-		short frame[2];
-		m_file.ReadFrame(frame);
-		m_pedalRelease.push_back(frame[0] * 58);
-	}
-
-	m_file.Close();
-	return true;
-}
-//Interpolates a value in m_wave between soft and lout piano samples
-//range is values from 0 - 1, 1 - really loud, 0 - really soft
-void CPianoInstrumentFactory::Interpolate(double range)
-{
-	m_wave.clear();
-	for (unsigned int x = 0; x< m_wave_forte.size(); x++)
-	{
-		m_wave.push_back(short((range*m_wave_forte.at(x)) + ((1 - range)*m_wave_piano.at(x))));
-	}
-}
-
+/* Set the elements of a note which need to be persistent. All others will be handled in PianoInstrument */
 void CPianoInstrumentFactory::SetNote(CNote *note)
 {
 	// Get a list of all attribute nodes and the
@@ -147,30 +67,44 @@ void CPianoInstrumentFactory::SetNote(CNote *note)
 		CComVariant value;
 		attrib->get_nodeValue(&value);
 
-		if (name == "pedal")
-		{
-			CComBSTR val;
-			val = value.bstrVal;
-			if (val == "press")
-			{
-				m_sustain = true;
-				m_instrument->GetPlayer()->PlayPedal(&m_pedalPress);
-			}
-			else if (val == "release")
-			{
-				m_sustain = false;
-				m_instrument->GetPlayer()->PlayPedal(&m_pedalRelease);
-			}
-		}
-		else if (name == "dynamics")
+		if (name == "duration")
 		{
 			value.ChangeType(VT_R8);
-			m_dynamics = value.dblVal;
-			if (m_dynamics > 1)
-				m_dynamics = 1;
-			else if (m_dynamics < 0)
-				m_dynamics = 0;
-			Interpolate(m_dynamics);
+			m_duration = value.dblVal;
 		}
+		else if (name == "pedal")
+		{
+			value.ChangeType(VT_BSTR);
+			char pedal[100];
+			wcstombs(pedal, value.bstrVal, 100);
+			string pedal_str(pedal);
+
+			if (pedal_str == "pressed") {
+				m_playPedalDown = true;
+				m_pedal = true;
+			}
+			if (pedal_str == "released") {
+				m_playPedalUp = true;
+				m_pedal = false;
+			}
+		}
+		else if (name == "keydynamic")
+		{
+			value.ChangeType(VT_R8);
+			m_volume = value.dblVal;
+		}
+		/*else if (name == "advkeydynamic")
+		{
+		m_advancedDynamic = true;
+		value.ChangeType(VT_BSTR);
+		char filename[100];
+		auto testing = value.bstrVal;
+		wcstombs(filename, value.bstrVal, 100);
+		m_loudFileName = filename;
+		int test = 0;
+		test++;
+		}*/
+
 	}
+
 }

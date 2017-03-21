@@ -81,18 +81,6 @@
     <ClCompile Include="AdditiveSines.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PianoEnvelope.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PianoInstrument.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PianoInstrumentFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PianoWave.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Chorus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -115,6 +103,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="WavePlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PianoInstrument.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PianoInstrumentFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -194,18 +191,6 @@
     <ClInclude Include="AdditiveSines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PianoEnvelope.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PianoInstrument.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PianoInstrumentFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PianoWave.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Chorus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -221,13 +206,22 @@
     <ClInclude Include="NoiseGate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WaveInstrument.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="WaveInstrumentFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WaveInstrument.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="WavePlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PianoInstrument.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PianoInstrumentFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -268,6 +262,10 @@
     <None Include="scores\Group.score">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="C:\Users\wqc32\Downloads\cse471-project1-master (1)\cse471-project1-master\scores\test_all.score">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="scores\final.score" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Synthie.rc">

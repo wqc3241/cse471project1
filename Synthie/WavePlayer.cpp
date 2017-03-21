@@ -1,6 +1,5 @@
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "WavePlayer.h"
-
 
 CWavePlayer::CWavePlayer(void)
 {

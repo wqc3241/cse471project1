@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<score bpm="60" beatspermeasure="4">
+	<instrument instrument="PianoInstrument">
+		<note measure="1" beat="1" duration="1" keydynamic="1" note="waves/piano/E6s.wav"/>
+		<note measure="1" beat="1.5" duration="1" note="waves/piano/D6s.wav"/>
+		<note measure="1" beat="2" duration="1" note="waves/piano/C6s.wav"/>
+		<note measure="1" beat="2.5" duration="1" note="waves/piano/D6s.wav"/>
+		<note measure="1" beat="3" keydynamic="2.0" duration="1" note="waves/piano/E6s.wav"/>
+		<note measure="1" beat="3.5" keydynamic="1.0" duration="1" note="waves/piano/E6s.wav"/>
+		<note measure="1" beat="4" keydynamic=".5" duration="1" note="waves/piano/E6s.wav"/>
+		<note measure="2" beat="1" keydynamic="1.0" duration="1" note="waves/piano/D6s.wav"/>
+		<note measure="2" beat="1.5" duration="1" note="waves/piano/D6s.wav"/>
+		<note measure="2" beat="2" duration="1" note="waves/piano/D6s.wav"/>
+		<note measure="2" beat="3" duration="1" note="waves/piano/E6s.wav"/>
+		<note measure="2" beat="3.5" duration="1" note="waves/piano/G6s.wav"/>
+		<note measure="2" beat="4" pedal="released" duration="4" note="waves/piano/G6s.wav"/>
+		
+		<note measure="8" beat="1" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="8" beat="1" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="8" beat="1" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="8" beat="1.25" duration=".5" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="8" beat="1.25" duration=".5" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="8" beat="1.25" duration=".5" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="8" beat="1.75" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="8" beat="1.75" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="8" beat="1.75" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		
+		<note measure="8" beat="2" duration=".25" keydynamic="1" note="waves/piano/B4s.wav" advkeydynamic="waves/piano/B4l.wav"/>
+		<note measure="8" beat="2" duration=".25" keydynamic="1" note="waves/piano/G4s.wav" advkeydynamic="waves/piano/G4l.wav"/>
+		<note measure="8" beat="2" duration=".25" keydynamic="1" note="waves/piano/F4s.wav" advkeydynamic="waves/piano/F4l.wav"/>
+		
+		<note measure="8" beat="2.25" duration=".5" keydynamic="1" note="waves/piano/B4s.wav" advkeydynamic="waves/piano/B4l.wav"/>
+		<note measure="8" beat="2.25" duration=".5" keydynamic="1" note="waves/piano/G4s.wav" advkeydynamic="waves/piano/G4l.wav"/>
+		<note measure="8" beat="2.25" duration=".5" keydynamic="1" note="waves/piano/F4s.wav" advkeydynamic="waves/piano/F4l.wav"/>
+		
+		<note measure="8" beat="2.5" duration=".25" keydynamic="1" note="waves/piano/F5s.wav" advkeydynamic="waves/piano/F5l.wav"/>
+		<note measure="8" beat="2.5" duration=".25" keydynamic="1" note="waves/piano/C5s.wav" advkeydynamic="waves/piano/C5l.wav"/>
+		<note measure="8" beat="2.5" duration=".25" keydynamic="1" note="waves/piano/A4s.wav" advkeydynamic="waves/piano/A4l.wav"/>
+		<note measure="8" beat="2.5" duration=".25" keydynamic="1" note="waves/piano/G4s.wav" advkeydynamic="waves/piano/G4l.wav"/>
+		
+		
+		<note measure="8" beat="2.75" duration=".25" keydynamic="1" note="waves/piano/F5s.wav"/>
+		<note measure="8" beat="2.75" duration=".25" keydynamic="1" note="waves/piano/C5s.wav"/>
+		<note measure="8" beat="2.75" duration=".25" keydynamic="1" note="waves/piano/A4s.wav"/>
+		<note measure="8" beat="2.75" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		
+		<note measure="8" beat="3" duration=".5" keydynamic="1" note="waves/piano/F5s.wav"/>
+		<note measure="8" beat="3" duration=".5" keydynamic="1" note="waves/piano/C5s.wav"/>
+		<note measure="8" beat="3" duration=".5" keydynamic="1" note="waves/piano/A4s.wav"/>
+		<note measure="8" beat="3" duration=".5" keydynamic="1" note="waves/piano/G4s.wav"/>
+		
+		<note measure="8" beat="3.5" duration=".25" keydynamic="1" note="waves/piano/D5s.wav"/>
+		<note measure="8" beat="3.5" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="8" beat="3.5" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		
+		
+		<note measure="8" beat="3.75" duration=".25" keydynamic="1" note="waves/piano/D5s.wav"/>
+		<note measure="8" beat="3.75" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="8" beat="3.75" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		
+		<note measure="8" beat="4" duration=".5" keydynamic="1" note="waves/piano/D5s.wav"/>
+		<note measure="8" beat="4" duration=".5" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="8" beat="4" duration=".5" keydynamic="1" note="waves/piano/G4s.wav"/>
+		
+		<note measure="9" beat=".5" duration=".25" keydynamic="1" note="waves/piano/A4s.wav"/>
+		<note measure="9" beat=".5" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		<note measure="9" beat=".5" duration=".25" keydynamic="1" note="waves/piano/D3s.wav"/>
+		
+		
+		<note measure="9" beat=".75" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="9" beat=".75" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="9" beat=".75" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="9" beat="1" duration=".5" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="9" beat="1" duration=".5" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="9" beat="1" duration=".5" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="9" beat="1.5" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="9" beat="1.5" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="9" beat="1.5" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		
+		<note measure="9" beat="1.75" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="9" beat="1.75" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="9" beat="1.75" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="9" beat="2" duration=".5" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="9" beat="2" duration=".5" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="9" beat="2" duration=".5" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="9" beat="2.5" duration=".25" keydynamic="1" note="waves/piano/F5s.wav"/>
+		<note measure="9" beat="2.5" duration=".25" keydynamic="1" note="waves/piano/C5s.wav"/>
+		<note measure="9" beat="2.5" duration=".25" keydynamic="1" note="waves/piano/A4s.wav"/>
+		<note measure="9" beat="2.5" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		
+		
+		<note measure="9" beat="2.75" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="9" beat="2.75" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="9" beat="2.75" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="9" beat="3" duration=".5" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="9" beat="3" duration=".5" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="9" beat="3" duration=".5" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="9" beat="3.5" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="9" beat="3.5" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="9" beat="3.5" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		
+		<note measure="9" beat="3.75" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="9" beat="3.75" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="9" beat="3.75" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="9" beat="4" duration=".5" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="9" beat="4" duration=".5" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="9" beat="4" duration=".5" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="10" beat=".5" duration=".25" keydynamic="1" note="waves/piano/F5s.wav"/>
+		<note measure="10" beat=".5" duration=".25" keydynamic="1" note="waves/piano/C5s.wav"/>
+		<note measure="10" beat=".5" duration=".25" keydynamic="1" note="waves/piano/A4s.wav"/>
+		<note measure="10" beat=".5" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		
+		
+		<note measure="10" beat="2.75" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="10" beat="2.75" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="10" beat="2.75" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="10" beat="3" duration=".5" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="10" beat="3" duration=".5" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="10" beat="3" duration=".5" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="10" beat="3.5" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="10" beat="3.5" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="10" beat="3.5" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		
+		<note measure="10" beat="3.75" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="10" beat="3.75" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="10" beat="3.75" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="10" beat="3.75" duration=".1" keydynamic="1" note="waves/piano/B5s.wav"/>
+		<note measure="10" beat="3.85" duration=".1" keydynamic="1" note="waves/piano/B5s.wav"/>
+		<note measure="10" beat="3.95" duration=".1" keydynamic="1" note="waves/piano/B5s.wav"/>
+		<note measure="11" beat=".05" duration=".1" keydynamic="1" note="waves/piano/B5s.wav"/>
+		<note measure="11" beat=".15" duration=".1" keydynamic="1" note="waves/piano/B5s.wav"/>
+		
+		<note measure="11" beat=".05" duration=".5" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="11" beat=".05" duration=".5" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="11" beat=".05" duration=".5" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		<note measure="11" beat=".55" duration=".25" keydynamic="1" note="waves/piano/B4s.wav"/>
+		<note measure="11" beat=".55" duration=".25" keydynamic="1" note="waves/piano/G4s.wav"/>
+		<note measure="11" beat=".55" duration=".25" keydynamic="1" note="waves/piano/F4s.wav"/>
+		
+		
+	</instrument>
+	
+	<instrument instrument="AdditiveInstrument">
+		<note measure="3" beat="3" duration="4" harmonics="1" vibrato="12" vibratoRate="12" crossfade="1" crossfadeOverlap="0" note="A3"/>
+		<note measure="3" beat="3.5" duration="4" harmonics="1 .3 .5" vibrato="12" vibratoRate="8" crossfade="1" crossfadeOverlap="2"/>
+		<note measure="3" beat="4" duration="2" harmonics="1" vibrato="12" vibratoRate="4" note="Bb2" />
+	</instrument>
+	
+	<instrument instrument="Wave">
+		<note measure="4" beat="1" duration="10" file="waves/big-room-lead.wav" pitch="1.1" attack="0.5" release="0.5"/> 
+		
+		<note measure="6" beat="2" duration="0" file="waves/do-it.wav" pitch="1.0" attack="0.5" release="0.5"/> 
+		
+		<note measure="11" beat=".55" duration="0" file="waves/sandstorm.wav" pitch="1.0" attack="1.0" release="0.5"/> 
+		
+		<note measure="15" beat="2.5" duration="0" file="waves/danger-zone-talk.wav" pitch="1.0" fade="6.0" crossfade="waves/danger-zone-short.wav" attack="0.5" release="2.0" />
+	</instrument>
+
+	<!-- Effects -->
+
+	<instrument instrument="Chorus">
+		<note measure="1" delay=".0025" wet=".8" dry=".2" />
+		<note measure="2" beat="1" delay=".0025" wet=".8" dry=".2" />
+	</instrument>
+	
+	<instrument instrument="NoiseGate">
+	    <note measure="8" delay=".0025" wet=".5" dry=".5" threshold=".1" />
+  	</instrument>
+  <instrument instrument="Flange">
+    <note measure="9" delay=".0025" wet=".25" dry=".75" />
+  </instrument>
+  <instrument instrument="Compress">
+    <note measure="10" beat=".5" delay=".0025" wet=".4" dry=".6" threshold=".005" />
+    <note measure="10" beat="2.75" delay=".0025" wet=".4" dry=".6" threshold=".005" />
+    <note measure="10" beat="3" delay=".0025" wet=".4" dry=".6" threshold=".005" />
+  </instrument>
+</score>
