@@ -13,17 +13,17 @@
     <note measure="3" beat="1" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="G4"/>
     <note measure="3" beat="1" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="Eb4"/>
 
-    <note measure="4" beat="1" duration="0.5"  amplitudes="0.7 0.6 0.5 0.5 " note="Bb4"/>
-    <note measure="4" beat="1" duration="0.5"  amplitudes="0.7 0.6 0.5 0.5" note="D4"/>
-    <note measure="4" beat="1" duration="0.5"  amplitudes="0.7 0.6 0.5 0.5" note="F4"/>
+    <note measure="4" beat="1" duration="0.5" note="Bb4"/>
+    <note measure="4" beat="1" duration="0.5" note="D4"/>
+    <note measure="4" beat="1" duration="0.5" note="F4"/>
 
     <note measure="4" beat="2" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="Bb4"/>
     <note measure="4" beat="2" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="G4"/>
     <note measure="4" beat="2" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="Eb4"/>
 
-    <note measure="5" beat="1" duration="0.5"  amplitudes="0.7 0.6 0.5 0.5" note="Bb4"/>
-    <note measure="5" beat="1" duration="0.5"  amplitudes="0.7 0.6 0.5 0.5" note="D4"/>
-    <note measure="5" beat="1" duration="0.5"  amplitudes="0.7 0.6 0.5 0.5" note="F4"/>
+    <note measure="5" beat="1" duration="0.5" note="Bb4"/>
+    <note measure="5" beat="1" duration="0.5" note="D4"/>
+    <note measure="5" beat="1" duration="0.5" note="F4"/>
 
     <note measure="6" beat="1"   duration="0.5" amplitudes="0.8 0.6 0.4 0.5" note="G4" />
     <note measure="6" beat="1.5" duration="0.5" amplitudes="0.7 0.6 0.5 0.5 .3" note="F#4" />
@@ -34,8 +34,8 @@
     <note measure="7" beat="2" duration="1" amplitudes="0.7 0.6 0.5 0.5" note="F4"  vibrato ="4.0 2.0"/>
 
     <note measure="8" beat="1" duration="3" amplitudes="0.7 0.6 0.5 0.5" note="Bb4"  />
-    <note measure="8" beat="1" duration="3" amplitudes="0.7 0.6 0.5 0.5" note="F4"   />
-    <note measure="8" beat="1" duration="3" amplitudes="0.7 0.6 0.5 0.5" note="D4"   />
+    <note measure="8" beat="1" duration="3" note="F4"   />
+    <note measure="8" beat="1" duration="3" note="D4"   />
   </instrument>
 
   <instrument instrument="AdditiveInstrument">
@@ -90,48 +90,44 @@
   <instrument instrument="Flange">
     <note measure="15" delay=".0025" wet="1" dry="0" />
     <note measure="16" delay=".0025" wet="1" dry="0" />
-    <note measure="17" delay=".0025" wet="1" dry="0" />
-  </instrument>
-  <instrument instrument="Compress">
-    <note measure="18" delay=".0025" wet="1" dry="0" threshold=".005" />
   </instrument>
 
   <instrument instrument="PianoInstrument">
-    <note measure="17" beat="1"  pedal="pressed" keydynamic="1" note="waves/piano/F4s.wav"/>
-    <note measure="17" beat="2"  note="waves/piano/G4s.wav"/>
-    
-    <note measure="18" beat="1"  note="waves/piano/A4s.wav"/>
-    <note measure="18" beat="2"  pedal="released" keydynamic="2" note="waves/piano/B4s.wav"/>
-    <note measure="18" beat="2"  note="waves/piano/G4s.wav"/>
-    <note measure="18" beat="2"  keydynamic="2" note="waves/piano/E4s.wav"/>
+    <note measure="17" beat="2.00" duration ="0.4" keydynamic="1" note="waves/piano/F4s.wav"/>
+    <note measure="17" beat="2.33" duration ="0.4" note="waves/piano/G4s.wav"/>
+    <note measure="17" beat="2.60" duration ="0.33" note="waves/piano/A4s.wav"/>
 
-    <note measure="19" beat="1"  note="waves/piano/B4s.wav"/>
-    <note measure="19" beat="1"  note="waves/piano/G4s.wav"/>
-    <note measure="19" beat="1"  note="waves/piano/E4s.wav"/>
+    <note measure="18" beat="1"  duration="0.5" keydynamic="2" note="waves/piano/B4s.wav"/>
+    <note measure="18" beat="1"  duration="0.5" note="waves/piano/G4s.wav"/>
+    <note measure="18" beat="1"  duration="0.5" keydynamic="2" note="waves/piano/E4s.wav"/>
 
-    <note measure="20" beat="1"   pedal="pressed" keydynamic="3" note="waves/piano/B4s.wav"/>
-    <note measure="20" beat="1"   note="waves/piano/D4s.wav"/>
-    <note measure="20" beat="1"   note="waves/piano/F4s.wav"/>
+    <note measure="19" beat="1" duration="0.5" note="waves/piano/B4s.wav"/>
+    <note measure="19" beat="1" duration="0.5" note="waves/piano/G4s.wav"/>
+    <note measure="19" beat="1" duration="0.5" note="waves/piano/E4s.wav"/>
 
-    <note measure="21" beat="2"   pedal="released" keydynamic="2" note="waves/piano/B4s.wav"/>
-    <note measure="21" beat="2"   keydynamic="1" note="waves/piano/G4s.wav"/>
-    <note measure="21" beat="2"   keydynamic="4" note="waves/piano/E4s.wav"/>
+    <note measure="20" beat="1" duration="0.5"  keydynamic="3" note="waves/piano/B4s.wav"/>
+    <note measure="20" beat="1" duration="0.5"  note="waves/piano/D4s.wav"/>
+    <note measure="20" beat="1" duration="0.5"  note="waves/piano/F4s.wav"/>
 
-    <note measure="22" beat="1"  note="waves/piano/B4s.wav"/>
-    <note measure="22" beat="1"  note="waves/piano/D4s.wav"/>
-    <note measure="22" beat="1"  note="waves/piano/F4s.wav"/>
+    <note measure="21" beat="2" duration="0.5"  keydynamic="2" note="waves/piano/B4s.wav"/>
+    <note measure="21" beat="2" duration="0.5"  keydynamic="1" note="waves/piano/G4s.wav"/>
+    <note measure="21" beat="2" duration="0.5"  keydynamic="4" note="waves/piano/E4s.wav"/>
 
-    <note measure="23" beat="1"    keydynamic="3" note="waves/piano/G4s.wav" advkeydynamic="waves/piano/E6l.wav"/>
-    <note measure="23" beat="1.5"  note="waves/piano/F4#s.wav" />
-    <note measure="23" beat="2"    keydynamic="2" note="waves/piano/G4s.wav" advkeydynamic="waves/piano/E6l.wav"/>
-    <note measure="23" beat="2.5"  keydynamic="1" note="waves/piano/G4#s.wav" />
+    <note measure="22" beat="1" duration="0.5" note="waves/piano/B4s.wav"/>
+    <note measure="22" beat="1" duration="0.5" note="waves/piano/D4s.wav"/>
+    <note measure="22" beat="1" duration="0.5" note="waves/piano/F4s.wav"/>
 
-    <note measure="24" beat="1"  note="waves/piano/A4s.wav" />
-    <note measure="24" beat="2"  note="waves/piano/F4s.wav"  vibrato ="4.0 2.0"/>
+    <note measure="23" beat="1"  duration="0.5"  keydynamic="3" note="waves/piano/G4s.wav" advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="23" beat="1.5" duration="0.5" note="waves/piano/F4#s.wav" />
+    <note measure="23" beat="2"  duration="0.5"  keydynamic="2" note="waves/piano/G4s.wav" advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="23" beat="2.5" duration="0.5" keydynamic="1" note="waves/piano/G4#s.wav" />
 
-    <note measure="25" beat="1"  note="waves/piano/B4s.wav"  advkeydynamic="waves/piano/E6l.wav"/>
-    <note measure="25" beat="1"  note="waves/piano/F4s.wav"   />
-    <note measure="25" beat="1"  keydynamic="3" note="waves/piano/D4s.wav"   advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="24" beat="1" duration="0.5" note="waves/piano/A4s.wav" />
+    <note measure="24" beat="2" duration="0.5" note="waves/piano/F4s.wav"  vibrato ="4.0 2.0"/>
+
+    <note measure="25" beat="1" duration="0.5" note="waves/piano/B4s.wav"  advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="25" beat="1" duration="0.5" note="waves/piano/F4s.wav"   />
+    <note measure="25" beat="1" duration="0.5" keydynamic="3" note="waves/piano/D4s.wav"   advkeydynamic="waves/piano/E6l.wav"/>
     
   </instrument>
 </score>

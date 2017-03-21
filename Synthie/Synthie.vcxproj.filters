@@ -265,7 +265,6 @@
     <None Include="C:\Users\wqc32\Downloads\cse471-project1-master (1)\cse471-project1-master\scores\test_all.score">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="scores\final.score" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Synthie.rc">
