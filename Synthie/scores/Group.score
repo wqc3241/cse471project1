@@ -93,41 +93,157 @@
   </instrument>
 
   <instrument instrument="PianoInstrument">
-    <note measure="17" beat="2.00" duration ="0.4" keydynamic="1" note="waves/piano/F4s.wav"/>
-    <note measure="17" beat="2.33" duration ="0.4" note="waves/piano/G4s.wav"/>
-    <note measure="17" beat="2.60" duration ="0.33" note="waves/piano/A4s.wav"/>
+    <note measure="17" beat="2.00" duration ="0.4" keydynamic="1" note="waves/piano/F4l.wav"/>
+    <note measure="17" beat="2.33" duration ="0.4" note="waves/piano/G4l.wav"/>
+    <note measure="17" beat="2.60" duration ="0.33" note="waves/piano/A4l.wav"/>
 
-    <note measure="18" beat="1"  duration="0.5" keydynamic="2" note="waves/piano/B4s.wav"/>
-    <note measure="18" beat="1"  duration="0.5" note="waves/piano/G4s.wav"/>
-    <note measure="18" beat="1"  duration="0.5" keydynamic="2" note="waves/piano/E4s.wav"/>
+    <note measure="18" beat="1"  duration="0.5" keydynamic="2" note="waves/piano/B4l.wav"/>
+    <note measure="18" beat="1"  duration="0.5" note="waves/piano/G4l.wav"/>
+    <note measure="18" beat="1"  duration="0.5" keydynamic="2" note="waves/piano/E4l.wav"/>
 
-    <note measure="19" beat="1" duration="0.5" note="waves/piano/B4s.wav"/>
-    <note measure="19" beat="1" duration="0.5" note="waves/piano/G4s.wav"/>
-    <note measure="19" beat="1" duration="0.5" note="waves/piano/E4s.wav"/>
+    <note measure="19" beat="1" duration="0.5" note="waves/piano/B4l.wav"/>
+    <note measure="19" beat="1" duration="0.5" note="waves/piano/G4l.wav"/>
+    <note measure="19" beat="1" duration="0.5" note="waves/piano/E4l.wav"/>
 
-    <note measure="20" beat="1" duration="0.5"  keydynamic="3" note="waves/piano/B4s.wav"/>
-    <note measure="20" beat="1" duration="0.5"  note="waves/piano/D4s.wav"/>
-    <note measure="20" beat="1" duration="0.5"  note="waves/piano/F4s.wav"/>
+    <note measure="20" beat="1" duration="0.5"  keydynamic="3" note="waves/piano/B4l.wav"/>
+    <note measure="20" beat="1" duration="0.5"  note="waves/piano/D4l.wav"/>
+    <note measure="20" beat="1" duration="0.5"  note="waves/piano/F4l.wav"/>
 
-    <note measure="21" beat="2" duration="0.5"  keydynamic="2" note="waves/piano/B4s.wav"/>
-    <note measure="21" beat="2" duration="0.5"  keydynamic="1" note="waves/piano/G4s.wav"/>
-    <note measure="21" beat="2" duration="0.5"  keydynamic="4" note="waves/piano/E4s.wav"/>
+    <note measure="21" beat="2" duration="0.5"  keydynamic="2" note="waves/piano/B4l.wav"/>
+    <note measure="21" beat="2" duration="0.5"  keydynamic="1" note="waves/piano/G4l.wav"/>
+    <note measure="21" beat="2" duration="0.5"  keydynamic="4" note="waves/piano/E4l.wav"/>
 
-    <note measure="22" beat="1" duration="0.5" note="waves/piano/B4s.wav"/>
-    <note measure="22" beat="1" duration="0.5" note="waves/piano/D4s.wav"/>
-    <note measure="22" beat="1" duration="0.5" note="waves/piano/F4s.wav"/>
+    <note measure="22" beat="1" duration="0.5" note="waves/piano/B4l.wav"/>
+    <note measure="22" beat="1" duration="0.5" note="waves/piano/D4l.wav"/>
+    <note measure="22" beat="1" duration="0.5" note="waves/piano/F4l.wav"/>
 
-    <note measure="23" beat="1"  duration="0.5"  keydynamic="3" note="waves/piano/G4s.wav" advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="23" beat="1"  duration="0.5"  keydynamic="3" note="waves/piano/G4l.wav" advkeydynamic="waves/piano/E6l.wav"/>
     <note measure="23" beat="1.5" duration="0.5" note="waves/piano/F4#s.wav" />
-    <note measure="23" beat="2"  duration="0.5"  keydynamic="2" note="waves/piano/G4s.wav" advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="23" beat="2"  duration="0.5"  keydynamic="2" note="waves/piano/G4l.wav" advkeydynamic="waves/piano/E6l.wav"/>
     <note measure="23" beat="2.5" duration="0.5" keydynamic="1" note="waves/piano/G4#s.wav" />
 
-    <note measure="24" beat="1" duration="0.5" note="waves/piano/A4s.wav" />
-    <note measure="24" beat="2" duration="0.5" note="waves/piano/F4s.wav"  vibrato ="4.0 2.0"/>
+    <note measure="24" beat="1" duration="0.5" note="waves/piano/A4l.wav" />
+    <note measure="24" beat="2" duration="0.5" note="waves/piano/F4l.wav"  vibrato ="4.0 2.0"/>
 
-    <note measure="25" beat="1" duration="0.5" note="waves/piano/B4s.wav"  advkeydynamic="waves/piano/E6l.wav"/>
-    <note measure="25" beat="1" duration="0.5" note="waves/piano/F4s.wav"   />
-    <note measure="25" beat="1" duration="0.5" keydynamic="3" note="waves/piano/D4s.wav"   advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="25" beat="1" duration="0.5" note="waves/piano/B4l.wav"  advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="25" beat="1" duration="0.5" note="waves/piano/F4l.wav"   />
+    <note measure="25" beat="1" duration="0.5" keydynamic="3" note="waves/piano/D4l.wav"   advkeydynamic="waves/piano/E6l.wav"/>
     
   </instrument>
+
+  <instrument instrument="Wave">
+    <note measure="26" duration="4.5" file="waves/airport.wav" pitch="1.0" attack="0.5" release="0.5"/>
+    <note measure="27" duration="4.5" file="waves/goldrush.wav" pitch="1.0"/>
+    <note measure="28" duration="2" file="waves/big-room-drop.wav" pitch="2.0"/>
+    <note measure="29" duration="0" file="waves/big-room-lead.wav" pitch="1.0" fade="2.0" crossfade="waves/progressive-house-melody.wav" attack="0.5" release="0.5"/>
+    <note measure="30" duration="6" file="waves/drumriff.wav" pitch="1.0" fade="2.0" crossfade="waves/goldrush.wav"/>
+    <note measure="31" duration="1" file="waves/progressive-house-melody.wav" pitch="1.0"/>
+    <note measure="32" duration="4" file="waves/progressive-house-melody-2.wav" pitch="1.0" />
+    <note measure="33" duration="0" file="waves/drumriff.wav" pitch="1.0" fade="0.5" crossfade="waves/big-room-drop.wav"/>
+  </instrument>
+
+  <instrument instrument="AdditiveInstrument" >
+    <note measure="34" beat="2.00" duration="0.4"  crossFade=".10 .10" amplitudes="0.7 0.6 0.4 " note="F4"/>
+    <note measure="34" beat="2.33" duration="0.4"  crossFade=".10 .10" amplitudes="0.7 0.6 0.4 " note="G4"/>
+    <note measure="34" beat="2.60" duration="0.33" crossFade=".10 .10" amplitudes="0.7 0.6 0.4 " note="A4"/>
+
+    <note measure="35" beat="1" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="Bb4"/>
+    <note measure="35" beat="1" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="G4"/>
+    <note measure="35" beat="1" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="Eb4"/>
+
+    <note measure="36" beat="1" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="Bb4"/>
+    <note measure="36" beat="1" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="G4"/>
+    <note measure="36" beat="1" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="Eb4"/>
+
+    <note measure="37" beat="1" duration="0.5" note="Bb4"/>
+    <note measure="37" beat="1" duration="0.5" note="D4"/>
+    <note measure="37" beat="1" duration="0.5" note="F4"/>
+
+    <note measure="38" beat="2" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="Bb4"/>
+    <note measure="38" beat="2" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="G4"/>
+    <note measure="38" beat="2" duration="0.5"  amplitudes="0.8 0.6 0.4 0.5" note="Eb4"/>
+
+    <note measure="39" beat="1" duration="0.5" note="Bb4"/>
+    <note measure="39" beat="1" duration="0.5" note="D4"/>
+    <note measure="39" beat="1" duration="0.5" note="F4"/>
+
+    <note measure="40" beat="1"   duration="0.5" amplitudes="0.8 0.6 0.4 0.5" note="G4" />
+    <note measure="40" beat="1.5" duration="0.5" amplitudes="0.7 0.6 0.5 0.5 .3" note="F#4" />
+    <note measure="40" beat="2"   duration="0.5" amplitudes="0.8 0.6 0.4 0.5" note="G4" />
+    <note measure="40" beat="2.5" duration="0.5" amplitudes="0.8 0.6 0.4 0.5 .3" note="G#4" />
+
+    <note measure="41" beat="1" duration="1" amplitudes="0.7 0.6 0.4" note="A4" />
+    <note measure="41" beat="2" duration="1" amplitudes="0.7 0.6 0.5 0.5" note="F4"  vibrato ="4.0 2.0"/>
+
+    <note measure="42" beat="1" duration="3" amplitudes="0.7 0.6 0.5 0.5" note="Bb4"  />
+    <note measure="42" beat="1" duration="3" note="F4"   />
+    <note measure="42" beat="1" duration="3" note="D4"   />
+  </instrument>
+
+  <!-- EFFECTS -->
+  <instrument instrument="NoiseGate">
+    <note measure="35" delay=".0025" wet="1" dry="0" threshold=".1" />
+    <note measure="37" delay=".0025" wet=".75" dry=".25" threshold=".1" />
+  </instrument>
+  <instrument instrument="Chorus">
+    <note measure="39" beat="2.0" delay=".0025" wet=".5" dry=".5" />
+  </instrument>
+
+  <instrument instrument="Wave">
+    <note measure="37" duration="4.5" file="waves/airport.wav" pitch="1.0" attack="0.5" release="0.5"/>
+    <note measure="38" duration="4.5" file="waves/goldrush.wav" pitch="1.0"/>
+    <note measure="39" duration="2" file="waves/big-room-drop.wav" pitch="2.0"/>
+    <note measure="40" duration="0" file="waves/big-room-lead.wav" pitch="1.0" fade="2.0" crossfade="waves/progressive-house-melody.wav" attack="0.5" release="0.5"/>
+    <note measure="41" duration="6" file="waves/drumriff.wav" pitch="1.0" fade="2.0" crossfade="waves/goldrush.wav"/>
+    <note measure="42" duration="1" file="waves/progressive-house-melody.wav" pitch="1.0"/>
+  </instrument>
+
+    <instrument instrument="PianoInstrument">
+    <note measure="43" beat="2.00" duration ="0.4" keydynamic="1" note="waves/piano/F4l.wav"/>
+    <note measure="43" beat="2.33" duration ="0.4" note="waves/piano/G4l.wav"/>
+    <note measure="43" beat="2.60" duration ="0.33" note="waves/piano/A4l.wav"/>
+
+    <note measure="44" beat="1"  duration="0.5" keydynamic="2" note="waves/piano/B4l.wav"/>
+    <note measure="44" beat="1"  duration="0.5" note="waves/piano/G4l.wav"/>
+    <note measure="44" beat="1"  duration="0.5" keydynamic="2" note="waves/piano/E4l.wav"/>
+
+    <note measure="45" beat="1" duration="0.5" note="waves/piano/B4l.wav"/>
+    <note measure="45" beat="1" duration="0.5" note="waves/piano/G4l.wav"/>
+    <note measure="45" beat="1" duration="0.5" note="waves/piano/E4l.wav"/>
+
+    <note measure="46" beat="1" duration="0.5"  keydynamic="3" note="waves/piano/B4l.wav"/>
+    <note measure="46" beat="1" duration="0.5"  note="waves/piano/D4l.wav"/>
+    <note measure="46" beat="1" duration="0.5"  note="waves/piano/F4l.wav"/>
+
+    <note measure="47" beat="2" duration="0.5"  keydynamic="2" note="waves/piano/B4l.wav"/>
+    <note measure="47" beat="2" duration="0.5"  keydynamic="1" note="waves/piano/G4l.wav"/>
+    <note measure="47" beat="2" duration="0.5"  keydynamic="4" note="waves/piano/E4l.wav"/>
+
+    <note measure="48" beat="1" duration="0.5" note="waves/piano/B4l.wav"/>
+    <note measure="48" beat="1" duration="0.5" note="waves/piano/D4l.wav"/>
+    <note measure="48" beat="1" duration="0.5" note="waves/piano/F4l.wav"/>
+
+    <note measure="49" beat="1"  duration="0.5"  keydynamic="3" note="waves/piano/G4l.wav" advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="49" beat="1.5" duration="0.5" note="waves/piano/F4#s.wav" />
+    <note measure="49" beat="2"  duration="0.5"  keydynamic="2" note="waves/piano/G4l.wav" advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="49" beat="2.5" duration="0.5" keydynamic="1" note="waves/piano/G4#s.wav" />
+
+    <note measure="50" beat="1" duration="0.5" note="waves/piano/A4l.wav" />
+    <note measure="50" beat="2" duration="0.5" note="waves/piano/F4l.wav"  vibrato ="4.0 2.0"/>
+
+    <note measure="51" beat="1" duration="0.5" note="waves/piano/B4l.wav"  advkeydynamic="waves/piano/E6l.wav"/>
+    <note measure="51" beat="1" duration="0.5" note="waves/piano/F4l.wav"   />
+    <note measure="51" beat="1" duration="0.5" keydynamic="3" note="waves/piano/D4l.wav"   advkeydynamic="waves/piano/E6l.wav"/>
+    
+  </instrument>
+  
+  <instrument instrument="Wave">
+    <note measure="51" duration="4.5" file="waves/airport.wav" pitch="1.0" attack="0.5" release="0.5"/>
+    <note measure="48" duration="4.5" file="waves/goldrush.wav" pitch="1.0"/>
+    <note measure="45" duration="2" file="waves/big-room-drop.wav" pitch="2.0"/>
+    <note measure="44" duration="0" file="waves/big-room-lead.wav" pitch="1.0" fade="2.0" crossfade="waves/progressive-house-melody.wav" attack="0.5" release="0.5"/>
+    <note measure="50" duration="6" file="waves/drumriff.wav" pitch="1.0" fade="2.0" crossfade="waves/goldrush.wav"/>
+    <note measure="49" duration="1" file="waves/progressive-house-melody.wav" pitch="1.0"/>
+  </instrument>
+
 </score>

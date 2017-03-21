@@ -1,6 +1,5 @@
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "WaveInstrument.h"
-
 
 CWaveInstrument::CWaveInstrument(void)
 {

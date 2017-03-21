@@ -1,15 +1,14 @@
 #pragma once
-#include "Instrument.h"
+#include "instrument.h"
 #include "WavePlayer.h"
 
 class CWaveInstrument :
 	public CInstrument
 {
 public:
-	CWaveInstrument();
-	~CWaveInstrument();
+	CWaveInstrument(void);
+	~CWaveInstrument(void);
 
-public:
 	virtual void Start();
 	virtual bool Generate();
 	virtual void SetNote(CNote *note);

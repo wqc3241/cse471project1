@@ -6,12 +6,11 @@
 class CWaveInstrumentFactory
 {
 public:
-	CWaveInstrumentFactory();
-	~CWaveInstrumentFactory();
+	CWaveInstrumentFactory(void);
+	~CWaveInstrumentFactory(void);
 
-public:
-	CWaveInstrument *CreateInstrument();
 	void SetNote(CNote *note);
+	CWaveInstrument *CreateInstrument();
 	bool LoadFile(const char *filename);
 	void ChangePitch(double rate);
 	void CrossFade(const char *filename);
@@ -25,6 +24,7 @@ public:
 
 private:
 	std::vector<short> m_wave;
+
 	double m_fade;
 	double m_attack;
 	double m_release;

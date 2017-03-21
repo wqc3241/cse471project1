@@ -2,6 +2,8 @@ using namespace std;
 #pragma once
 #include <list>
 #include <vector>
+#include <iostream>
+#include <algorithm>
 #include "msxml2.h"
 #include "Instrument.h"
 #include "Note.h"

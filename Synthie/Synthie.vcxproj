@@ -216,6 +216,7 @@
     </None>
     <None Include="scores\xingchenxiao.score" />
     <None Include="scores\yishi.score" />
+    <None Include="scores\yuyangji.score" />
     <None Include="UserImages.bmp" />
   </ItemGroup>
   <ItemGroup>

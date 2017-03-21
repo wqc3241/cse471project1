@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<score bpm="128" beatspermeasure="4">
-  <instrument instrument="WaveInstrument">
-    <note measure="1" duration="3.5" file="waves/big-room-lead.wav" pitch="1.0" attack="0.5" release="0.5"/>
-    <note measure="3" duration="3.5" file="waves/big-room-drop.wav" pitch="1.0"/>
-    <note measure="5" duration="1.75" file="waves/big-room-drop.wav" pitch="2.0"/>
+<score bpm="120" beatspermeasure="4">
+  <instrument instrument="Wave">
+    <note measure="1" duration="4.5" file="waves/airport.wav" pitch="1.0" attack="0.5" release="0.5"/>
+    <note measure="3" duration="4.5" file="waves/goldrush.wav" pitch="1.0"/>
+    <note measure="5" duration="2" file="waves/big-room-drop.wav" pitch="2.0"/>
     <note measure="6" duration="0" file="waves/big-room-lead.wav" pitch="1.0" fade="2.0" crossfade="waves/progressive-house-melody.wav" attack="0.5" release="0.5"/>
-    <note measure="13" duration="6" file="waves/progressive-house-melody-2.wav" pitch="1.0" />
+    <note measure="10" duration="6" file="waves/drumriff.wav" pitch="1.0" fade="2.0" crossfade="waves/goldrush.wav"/>
+    <note measure="12" duration="1" file="waves/progressive-house-melody.wav" pitch="1.0"/>
+    <note measure="13" duration="4" file="waves/progressive-house-melody-2.wav" pitch="1.0" />
+    <note measure="15" duration="0" file="waves/drumriff.wav" pitch="1.0" fade="0.5" crossfade="waves/big-room-drop.wav"/>
   </instrument>
 </score>
