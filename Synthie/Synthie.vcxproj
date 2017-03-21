@@ -211,6 +211,7 @@
     <None Include="scores\all.score" />
     <None Include="scores\fight2.score" />
     <None Include="scores\fight2o.score" />
+    <None Include="scores\Group.score" />
     <None Include="scores\qichaowang.score">
       <SubType>Designer</SubType>
     </None>

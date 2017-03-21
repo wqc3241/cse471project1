@@ -265,6 +265,9 @@
     <None Include="scores\fight2o.score">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="scores\Group.score">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Synthie.rc">

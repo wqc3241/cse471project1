@@ -7,7 +7,7 @@
 
 
 
-CAdditiveInstrument::CAdditiveInstrument(void)
+CAdditiveInstrument::CAdditiveInstrument()
 {
 	m_crossFadeIn = 0.0;
 	m_crossFadeOut = 0.0;
@@ -18,7 +18,7 @@ CAdditiveInstrument::CAdditiveInstrument(void)
 }
 
 
-CAdditiveInstrument::~CAdditiveInstrument(void)
+CAdditiveInstrument::~CAdditiveInstrument()
 {
 }
 
@@ -51,25 +51,31 @@ bool CAdditiveInstrument::Generate()
 	else if(m_time > (m_duration  - m_release))
 	factor = m_time*-1./m_release + (1./m_release)*(m_duration);
 	*/
-	double factor = 1.0;
+	double ratio = 1.0;
 	double sign = -1.0;
-	if (m_sustain > 1.0) sign = 1.0;
+
+	if (m_sustain > 1.0) {
+		sign = 1.0;
+	}
 
 	if (m_time < m_attack) {
-		factor = m_time*1. / m_attack;
-	}
-	else if (m_time < m_decay) {
-		factor = sign*((1.0 - m_sustain) / (m_decay - m_attack))*(m_time)+(1.0 - sign*((1.0 - m_sustain) / (m_decay - m_attack))*(m_attack));
-	}
-	else if (m_time >(m_duration - m_release) && m_release != 0) {
-		if (m_sustain <= 0) m_sustain = 1.0;
-		factor = m_time*-m_sustain / m_release + (m_sustain / m_release)*(m_duration);
-	}
-	else {
-		factor = m_sustain;
+		ratio = m_time*1. / m_attack;
 	}
 
-	m_frame[0] = m_frame[1] *= factor/32767;
+	else if (m_time < m_decay) {
+		ratio = sign*((1.0 - m_sustain) / (m_decay - m_attack))*(m_time)+(1.0 - sign*((1.0 - m_sustain) / (m_decay - m_attack))*(m_attack));
+	}
+
+	else if (m_time >(m_duration - m_release) && m_release != 0) {
+		if (m_sustain <= 0) m_sustain = 1.0;
+		ratio = m_time*-m_sustain / m_release + (m_sustain / m_release)*(m_duration);
+	}
+
+	else {
+		ratio = m_sustain;
+	}
+
+	m_frame[0] = m_frame[1] *= ratio/32767;
 
 	// Update time
 	m_time += GetSamplePeriod();

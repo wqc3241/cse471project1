@@ -40,16 +40,19 @@ void CAdditiveSines::GenerateWaveTable()
 	double sineRadians = 0;
 	double vibratoRadians = 0;
 
+	int nyquist = GetSampleRate() / 2;
+
 	double time = 0; int i;
 	for (i = 0; i < int(m_duration*GetSampleRate()); i++, time += 1. / GetSampleRate())
 	{
 		double sample = 0;
-		for (float n = 1.0; n*m_freq <= 22050 && n <= 8.0; n++)
+		
+		for (float n = 1.0; n*m_freq <= nyquist && n <= 8.0; n++) {
 			sample += (m_amplitude * m_amp[int(n - 1)] * (sin(n * sineRadians)));
+		}
 
 		vibratoRadians += (2 * PI * m_vRate) / GetSampleRate();
 		sineRadians += (2 * PI * (m_freq + m_vFreq * sin(vibratoRadians))) / GetSampleRate();
-
 
 		audio[i] = sample;
 	}
