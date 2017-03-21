@@ -81,12 +81,6 @@
     <ClCompile Include="AdditiveSines.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ADSR.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Amp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PianoEnvelope.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -200,12 +194,6 @@
     <ClInclude Include="AdditiveSines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ADSR.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Amp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PianoEnvelope.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -272,6 +260,9 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="scores\yishi.score">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="scores\fight2o.score">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

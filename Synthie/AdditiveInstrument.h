@@ -1,9 +1,6 @@
 #pragma once
 #include "Instrument.h"
 #include "AdditiveSines.h"
-#include "Amp.h"
-
-using namespace std;
 
 class CAdditiveInstrument :
 	public CInstrument
@@ -11,29 +8,25 @@ class CAdditiveInstrument :
 public:
 	CAdditiveInstrument();
 	virtual ~CAdditiveInstrument();
-	CAdditiveInstrument(double bpm);
+public:
+	virtual void Start();
+	virtual bool Generate();
 
-	virtual void Start() override;
-
-	virtual bool Generate() override;
-	virtual void SetNote(CNote *note) override;
-
-	void SetNextNote(CNote* next_note);
-
-	void SetFreq(double freq) { m_sinewave.SetFreq(freq); }
-	void SetAmplitude(double amp) { m_sinewave.SetAmp(amp); }
-	void SetDuration(double duration) { m_duration = duration; }
+	void SetFreq(double f) { m_sinewave.SetFreq(f); }
+	void SetAmplitude(double& a) { m_sinewave.SetAmplitude(a); }
+	void SetDuration(double d) { m_duration = d * GetSecondsPerBeat(); }
+	void SetCrossFadeIn(double in) { m_attack = in * GetSecondsPerBeat(); }
+	void SetCrossFadeOut(double out) { m_release = out * GetSecondsPerBeat(); }
+	virtual void SetNote(CNote *note);
 
 private:
-
+	CAdditiveSines   m_sinewave;
 	double m_duration;
 	double m_time;
-	double m_crossFade = 0;
-
-	CAdditiveSines m_sinewave;
-
-	// the next additive instrument - for cross fade!
-	CAdditiveInstrument* m_next = nullptr;
-	CAmp m_amp;
-	CADSR* m_ADSR;
+	double m_release;
+	double m_attack;
+	double m_crossFadeIn;
+	double m_crossFadeOut;
+	double m_sustain;
+	double m_decay;
 };

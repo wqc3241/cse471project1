@@ -88,11 +88,7 @@ bool CSynthesizer::Generate(double * frame)
 		}
 		else if (note->Instrument() == L"AdditiveInstrument")
 		{
-			instrument = new CAdditiveInstrument(GetBeatsPerMinute());
-			if ((m_currentNote + 1) < m_notes.size())
-			{
-				static_cast<CAdditiveInstrument*>(instrument)->SetNextNote(&m_notes[m_currentNote + 1]);
-			}
+			instrument = new CAdditiveInstrument();
 		}
 		else if (note->Instrument() == L"WaveInstrument")
 		{
